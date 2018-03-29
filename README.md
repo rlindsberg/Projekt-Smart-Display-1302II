@@ -1,2 +1,2 @@
 # Projekt-Smart-Display-II1302
-A smart home solution that user can send messeage to a door display via internet
+A smart home solution that enables users to send messages to a door display via internet.
