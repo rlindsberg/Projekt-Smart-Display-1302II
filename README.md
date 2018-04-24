@@ -17,8 +17,8 @@ $ git push master origin
 
 ### At Raspberry Pi:
 #### For the first time, clone the repo from Github
-Go to the root directory of the website
 ```sh
+# Go to the root directory of the website
 $ cd /var/www/html
 $ git clone https://github.com/rlindsberg/Projekt-Smart-Display-1302II.git
 # Set a new remote
@@ -31,4 +31,11 @@ $ git remote -v
 ```sh
 # Pull the repo from Github
 $ git pull origin master
+```
+
+#### How to move website files to the root directory of Apache?
+```sh
+$ mv -v html5up-read-only/* ../
+# Then remove the empty folder
+$ rm -rf html5up-read-only
 ```
