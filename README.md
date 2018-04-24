@@ -16,13 +16,19 @@ $ git push master origin
 ```
 
 At Raspberry Pi:
+### For the first time, clone the repo from Github
 Go to the root directory of the website
 ```sh
 $ cd /var/www/html
+$ git clone https://github.com/rlindsberg/Projekt-Smart-Display-1302II.git
 # Set a new remote
 $ git remote add origin https://github.com/rlindsberg/Projekt-Smart-Display-1302II.git
 # Verify new remote
-git remote -v
+$ git remote -v
+```
+
+### For later development, just pull changes from GitHub
 # clone/pull the repo from Github.
+```sh
 $ git pull origin master
 ```
