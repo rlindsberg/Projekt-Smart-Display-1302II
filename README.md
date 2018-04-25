@@ -35,7 +35,7 @@ $ git pull origin master
 
 #### How to move website files to the root directory of Apache?
 ```sh
-$ mv -v html5up-read-only/* ../
+$ mv -v html5up-read-only/* ./
 # Then remove the empty folder
 $ rm -rf html5up-read-only
 ```
