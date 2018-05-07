@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'config2.php';    
+require_once 'config2.php';   
+ 
    
 ?>
  
@@ -19,6 +20,8 @@ require_once 'config2.php';
 <body>
  
 <?php
+$url=$_SERVER['REQUEST_URI'];
+header("Refresh: 10; URL=$url");
 $sql = "SELECT * FROM message";
     
 $result = $link->query($sql);
