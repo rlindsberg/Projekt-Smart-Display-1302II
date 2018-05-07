@@ -66,7 +66,7 @@ echo "</div>";
   }
   else {
      echo '<h2 id=center> Welcome '; echo $name; echo '</h2>';
- echo '<li><a href=deleteMessage.php>Delete current message</a></li> ';
+ echo '<li><a href=deleteMessage.php><p id=right>Delete current message</p></a></li> ';
  echo '<span> </span>';
 echo
         "<form  method = 'POST' action = 'setComment.php'>

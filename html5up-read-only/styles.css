@@ -61,6 +61,13 @@ p#special {
      text-align: center;
      color:  black;
 }
+p#big {
+    color:  white;
+     font-family: Courier New;
+    font-size: 200px;
+     text-align: center;
+     color:  black;
+}
 p#special2 {
     color:  black;
     font-family: Courier New;
@@ -80,11 +87,11 @@ p#moved {
     left: 450px;
 }
 p#right {
-    color:  black;
+    
     font-family: Courier New;
     font-size: 20px;
      text-align: right;
-     color:  black;
+     color:  grey;
 }
 
 img#calendar {
