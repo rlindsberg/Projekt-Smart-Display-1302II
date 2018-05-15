@@ -56,3 +56,62 @@ void initDisplay(void){
   sendCommandToSPI(clearDisplay);
 
 }
+
+/**
+* @brief  Send command to display controller
+* @param  uint8_t commandToBeSent[]
+* @note   ..
+* @retval None
+**/
+void sendCommandToSPI(uint8_t commandToBeSent[]){
+  for (int i = 0; i < 3; i++) {
+    HAL_SPI_Transmit(&hspi2, &commandToBeSent[i], 1, 50);
+  }
+}
+
+/**
+* @brief  Put cursor onto the desired row
+* @param  uint8_t rowNr
+* @note   ..
+* @retval None
+**/
+void selectRow(uint8_t rowNr){
+  uint8_t rowAddress = 0x80 + rowNr * 0x20;
+  printf("Selecting row with addr %x\n", rowAddress);
+  uint8_t displayBuffer[3];
+  displayBuffer[0] = 0x1f;
+  displayBuffer[1] = rowAddress & 0x0f;
+  displayBuffer[2] = (rowAddress >> 4) & 0x0f;
+  HAL_SPI_Transmit(&hspi2, displayBuffer, 3, 1000);
+}
+
+/**
+* @brief  Sends an ASCII code to display
+* @param  uint8_t asciiData
+* @note   ..
+* @retval None
+**/
+void sendDataToDisplay(uint8_t asciiData) {  // Send one character to display
+  uint8_t displayBuffer[3];
+  displayBuffer[0] = 0x5f;
+  displayBuffer[1] = asciiData & 0x0f;
+  displayBuffer[2] = (asciiData >> 4) & 0x0f;
+  HAL_SPI_Transmit(&hspi2, displayBuffer, 3, 500);
+  // sendCommandToSPI(displayBuffer); //doesn't work..
+}
+
+/**
+* @brief  Sends a string to display
+* @param  char charBuffer[]
+* @note   ..
+* @retval None
+**/
+void sendCharToDisplay(char charBuffer[]) {  // Send one character to display
+  uint8_t displayBuffer[3];
+  displayBuffer[0] = 0x5f;
+  for (size_t i = 0; i < 10; i++) {
+    displayBuffer[1] = charBuffer[i] & 0x0f;
+    displayBuffer[2] = charBuffer[i] >> 4 & 0x0f;
+    HAL_SPI_Transmit(&hspi2, displayBuffer, 3, 500);
+  }
+}
