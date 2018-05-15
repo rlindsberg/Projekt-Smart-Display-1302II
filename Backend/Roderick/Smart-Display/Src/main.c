@@ -88,7 +88,7 @@ void selectRow(uint8_t rowNr){
 **/
 void sendCommandToSPI(uint8_t commandToBeSent[]){
   for (int i = 0; i < 3; i++) {
-    HAL_SPI_Transmit(&hspi1, &commandToBeSent[i], 1, 50);
+    HAL_SPI_Transmit(&hspi1, &commandToBeSent[i], 1, 500);
   }
 }
 
@@ -201,6 +201,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   initDisplay();
   selectRow(0);
+  sendDataToDisplay(40);
   /* USER CODE END 2 */
 
   /* Infinite loop */
