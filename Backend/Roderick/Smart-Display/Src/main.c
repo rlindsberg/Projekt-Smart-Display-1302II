@@ -135,10 +135,11 @@ void initDisplay(void){
   //Set CS to 0, Reset spi1_NSS
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
   HAL_Delay(10);
-  // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  // HAL_Delay(10);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  HAL_Delay(10);
   //Initialization commands
   uint8_t functionSet[3] = {0x1f, 0x0a, 0x03};
+  HAL_Delay(10);
   sendCommandToSPI(functionSet);
   uint8_t extendedFunctionSet[3] = {0x1f, 0x09, 0x0};
   sendCommandToSPI(extendedFunctionSet);
@@ -199,7 +200,7 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   initDisplay();
-  // selectRow(2);
+  selectRow(0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -294,7 +295,7 @@ void assert_failed(uint8_t* file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
-    ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 
 }
