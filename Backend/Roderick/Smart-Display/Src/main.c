@@ -5,7 +5,7 @@
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether
+  * USER CODE END. Other portions of this file, whether 
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
@@ -39,9 +39,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f3xx_hal.h"
+#include "spi.h"
+#include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-#include "stm32f3xx_hal.h"
+#include "gpio.h"
+#include "spi.h"
+#include "display.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -53,7 +57,6 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -61,6 +64,110 @@ static void MX_GPIO_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+/**
+* @brief  Put cursor onto the desired row
+* @param  uint8_t rowNr
+* @note   ..
+* @retval None
+**/
+void selectRow(uint8_t rowNr){
+  uint8_t rowAddress = 0x80 + rowNr * 0x20;
+  printf("Selecting row with addr %x\n", rowAddress);
+  uint8_t displayBuffer[3];
+  displayBuffer[0] = 0x1f;
+  displayBuffer[1] = rowAddress & 0x0f;
+  displayBuffer[2] = (rowAddress >> 4) & 0x0f;
+  HAL_SPI_Transmit(&hspi1, displayBuffer, 3, 1000);
+}
+
+/**
+* @brief  Send command to display controller
+* @param  uint8_t commandToBeSent[]
+* @note   ..
+* @retval None
+**/
+void sendCommandToSPI(uint8_t commandToBeSent[]){
+  for (int i = 0; i < 3; i++) {
+    HAL_SPI_Transmit(&hspi1, &commandToBeSent[i], 1, 500);
+  }
+}
+
+/**
+* @brief  Sends an ASCII code to display
+* @param  uint8_t asciiData
+* @note   ..
+* @retval None
+**/
+void sendDataToDisplay(uint8_t asciiData) {  // Send one character to display
+  uint8_t displayBuffer[3];
+  displayBuffer[0] = 0x5f;
+  displayBuffer[1] = asciiData & 0x0f;
+  displayBuffer[2] = (asciiData >> 4) & 0x0f;
+  HAL_SPI_Transmit(&hspi1, displayBuffer, 3, 500);
+  // sendCommandToSPI(displayBuffer); //doesn't work..
+}
+
+
+/**
+* @brief  Sends a string to display
+* @param  char charBuffer[]
+* @note   ..
+* @retval None
+**/
+void sendCharToDisplay(char charBuffer[]) {  // Send one character to display
+  uint8_t displayBuffer[3];
+  displayBuffer[0] = 0x5f;
+  for (size_t i = 0; i < 10; i++) {
+    displayBuffer[1] = charBuffer[i] & 0x0f;
+    displayBuffer[2] = charBuffer[i] >> 4 & 0x0f;
+    HAL_SPI_Transmit(&hspi1, displayBuffer, 3, 500);
+  }
+}
+
+
+/**
+* @brief  Init display
+* @param  None
+* @note   ..
+* @retval None
+**/
+void initDisplay(void){
+  //Set CS to 0, Reset spi1_NSS
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
+  HAL_Delay(10);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  HAL_Delay(10);
+  //Initialization commands
+  uint8_t functionSet[3] = {0x1f, 0x0a, 0x03};
+  HAL_Delay(10);
+  sendCommandToSPI(functionSet);
+  uint8_t extendedFunctionSet[3] = {0x1f, 0x09, 0x0};
+  sendCommandToSPI(extendedFunctionSet);
+  uint8_t entryModeSet[3] = {0x1f, 0x06, 0x0};
+  sendCommandToSPI(entryModeSet);
+  uint8_t biasSetting[3] = {0x1f,0x0e,0x01};
+  sendCommandToSPI(biasSetting);
+  uint8_t functionSet2[3] = {0x1f,0x09,0x03};
+  sendCommandToSPI(functionSet2);
+  uint8_t internalOSC[3] = {0x1f,0x0b,0x01};
+  sendCommandToSPI(internalOSC);
+  uint8_t followerControl[3] = {0x1f,0x0e,0x06};
+  sendCommandToSPI(followerControl);
+  uint8_t powerControl[3] = {0x1f,0x06,0x05};
+  sendCommandToSPI(powerControl);
+  uint8_t contrastSet[3] = {0x1f,0x0a,0x07};
+  sendCommandToSPI(contrastSet);
+  uint8_t functionSet3[3] = {0x1f,0x08,0x03};
+  sendCommandToSPI(functionSet3);
+  uint8_t displayOn[3] = {0x1f,0x0f,0x00};
+  sendCommandToSPI(displayOn);
+  uint8_t clearDisplay[3] = {0x1f,0x01,0x0};
+  sendCommandToSPI(clearDisplay);
+
+}
+
+
+
 
 /* USER CODE END 0 */
 
@@ -89,9 +196,12 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_SPI1_Init();
 
   /* USER CODE BEGIN 2 */
-
+  initDisplay();
+  selectRow(0);
+  sendDataToDisplay(40);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -101,7 +211,7 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, 1);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
   }
   /* USER CODE END 3 */
 
@@ -115,7 +225,7 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
 
-    /**Initializes the CPU, AHB and APB busses clocks
+    /**Initializes the CPU, AHB and APB busses clocks 
     */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
@@ -128,7 +238,7 @@ void SystemClock_Config(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
-    /**Initializes the CPU, AHB and APB busses clocks
+    /**Initializes the CPU, AHB and APB busses clocks 
     */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -142,50 +252,16 @@ void SystemClock_Config(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
-    /**Configure the Systick interrupt time
+    /**Configure the Systick interrupt time 
     */
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 
-    /**Configure the Systick
+    /**Configure the Systick 
     */
   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
 
   /* SysTick_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
-}
-
-/** Configure pins as
-        * Analog
-        * Input
-        * Output
-        * EVENT_OUT
-        * EXTI
-*/
-static void MX_GPIO_Init(void)
-{
-
-  GPIO_InitTypeDef GPIO_InitStruct;
-
-  /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : PB15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_15;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PA12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_12;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
 }
 
 /* USER CODE BEGIN 4 */
@@ -204,7 +280,7 @@ void _Error_Handler(char * file, int line)
   while(1)
   {
   }
-  /* USER CODE END Error_Handler_Debug */
+  /* USER CODE END Error_Handler_Debug */ 
 }
 
 #ifdef USE_FULL_ASSERT
@@ -220,7 +296,7 @@ void assert_failed(uint8_t* file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
-    ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 
 }
@@ -229,10 +305,10 @@ void assert_failed(uint8_t* file, uint32_t line)
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-*/
+*/ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

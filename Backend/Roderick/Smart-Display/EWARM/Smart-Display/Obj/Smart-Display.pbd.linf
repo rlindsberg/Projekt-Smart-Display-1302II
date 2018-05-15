@@ -1,5 +1,7 @@
 ﻿C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\Smart-Display.pbd
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\gpio.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\main.pbi
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\spi.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_cortex.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_dma.pbi
@@ -13,6 +15,8 @@ C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_pwr_ex.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_rcc.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_rcc_ex.pbi
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_spi.pbi
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_spi_ex.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_tim.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_hal_tim_ex.pbi
 C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM\Smart-Display\Obj\stm32f3xx_it.pbi
