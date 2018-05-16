@@ -12,7 +12,7 @@ $ cd Projekt-Smart-Display-1302II
 Then use your favourite text editor to code..
 Lastly, commit and push your commits to GitHub.
 ```sh
-$ git push master origin
+$ git push origin master
 ```
 
 ### At Raspberry Pi:
