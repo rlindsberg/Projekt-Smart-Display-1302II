@@ -1,3 +1,4 @@
+/* Code for registering a new user through sending username and an encrypted password to a database where it is stored. */
 <?php
 require_once 'config.php';
 
