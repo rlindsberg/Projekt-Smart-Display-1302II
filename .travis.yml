@@ -1,6 +1,7 @@
 language: c
 sudo: false # only for faster builds
 script:
-  - clang --include-directory Backend/Roderick/Inc Backend/Roderick/Drivers/STM32F3xx_HAL_Driver/Inc -coverage -O0 Backend/Roderick/Src/main.c -o main
+  - clang --include-directory
+  - gcc -g -Wall -IBackend/Roderick/Inc -IBackend/Roderick/Drivers/STM32F3xx_HAL_Driver/Inc -c Backend/Roderick/Src/main.c
   - ./main
   - gcov Backend/Roderick/Src/main.c
