@@ -1,3 +1,4 @@
+/* Code for the homepage that checks if a user is logged in and fetches the current message from the database and enables a user that is logged in to send in a form with a new message. */
 <?php
 session_start();
 require_once 'config2.php';    
