@@ -1,3 +1,4 @@
+/* Code for fetching and displaying the current message of the database, also includes a timed auto refresh of the page. */
 <?php
 session_start();
 require_once 'config2.php';   
