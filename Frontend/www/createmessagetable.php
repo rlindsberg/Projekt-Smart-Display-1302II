@@ -1,5 +1,12 @@
+/* Code that create the table for the messages on the database 
+Info for SQL database is below
+servername: localhost
+username: root
+password: password
+databasename: smartdisplaymessage
+*/
 <?php
-$link = mysqli_connect("localhost", "root", "", "smartdisplaymessage");
+$link = mysqli_connect("localhost", "root", "password", "smartdisplaymessage");
  
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());

@@ -5,7 +5,7 @@
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
+  * USER CODE END. Other portions of this file, whether
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
@@ -37,15 +37,13 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "stm32f3xx_hal.h"
-#include "spi.h"
-#include "gpio.h"
+#include "../Inc/main.h"
+#include "../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h"
+#include "../Inc/spi.h"
+#include "../Inc/gpio.h"
 
 /* USER CODE BEGIN Includes */
-#include "gpio.h"
-#include "spi.h"
-#include "display.h"
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -133,10 +131,11 @@ void sendCharToDisplay(char charBuffer[]) {  // Send one character to display
 **/
 void initDisplay(void){
   //Set CS to 0, Reset spi1_NSS
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
-  HAL_Delay(10);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  HAL_Delay(10);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET); // PA4: CS
+//  HAL_Delay(100);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_SET);  // PA12: RST
+//  HAL_Delay(100);
+
   //Initialization commands
   uint8_t functionSet[3] = {0x1f, 0x0a, 0x03};
   HAL_Delay(10);
@@ -166,7 +165,83 @@ void initDisplay(void){
 
 }
 
+void displaySend(uint8_t data) {  // Send one character to display
+  uint8_t displaySend[3];
+  displaySend[0] = 0x5f;
+  displaySend[1] = data & 0x0f;
+  displaySend[2] = (data >> 4) & 0x0f;
+  HAL_SPI_Transmit(&hspi1,displaySend,3,1000);
+}
 
+/**
+* @brief  Sends config data to display to decide which row to print to
+* @param  row: which row to be printed to
+* @retval None
+*/
+void activeRow(uint8_t row) {  // put cursor on desired row
+  uint8_t data;
+  if (row == 1) { data = 0x80; }
+  else if (row == 2) { data = 0xa0; }
+  else if (row == 3) { data = 0xc0; }
+  else if (row == 4) { data = 0xe0; }
+  uint8_t displaySend[3];
+  displaySend[0] = 0x1f;
+  displaySend[1] = data & 0x0f;
+  displaySend[2] = (data >> 4) & 0x0f;
+  HAL_SPI_Transmit(&hspi1,displaySend,3,1000);
+}
+
+void displayInit(void) {  // Init display
+//  HAL_Delay(100);
+  // HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET); // PA4: CS
+//  HAL_Delay(100);
+
+
+
+ HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);  // PA12: RST
+ HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+ HAL_Delay(100);
+
+
+  uint8_t displayInit [12][3] ={
+    {0x1f,0x0a,0x03},{0x1f,0x09,0x00},{0x1f,0x06,0x00},
+    {0x1f,0x0e,0x01},{0x1f,0x09,0x03},{0x1f,0x0b,0x01},
+    {0x1f,0x0e,0x06},{0x1f,0x06,0x05},{0x1f,0x0a,0x07},
+    {0x1f,0x08,0x03},{0x1f,0x0f,0x00},{0x1f,0x01,0x00}};
+  int i,j;
+  for (i=0; i<12; i++) {
+    for (j=0; j<3; j++) {
+      HAL_SPI_Transmit(&hspi1,&displayInit[i][j],1,100);
+       HAL_Delay(100);
+    }
+  }
+  // Print welcome message to screen to appear before first therm/humi printout
+  char row1Init[10];
+  sprintf(row1Init, "----------");
+  activeRow(1); // row1 = time
+  for (i=0; i<10; i++) {
+    displaySend(row1Init[i]);
+     HAL_Delay(100);
+  }
+  char row2Init[10];
+  sprintf(row2Init, "----------");
+  activeRow(2); // row1 = time
+  for (i=0; i<10; i++) {
+    displaySend(row2Init[i]);
+  }
+  char row3Init[10];
+  sprintf(row3Init, "----------");
+  activeRow(3); // row1 = time
+  for (i=0; i<10; i++) {
+    displaySend(row3Init[i]);
+  }
+  char row4Init[10];
+  sprintf(row4Init, "----------");
+  activeRow(4); // row1 = time
+  for (i=0; i<10; i++) {
+    displaySend(row4Init[i]);
+  }
+}
 
 
 /* USER CODE END 0 */
@@ -199,9 +274,14 @@ int main(void)
   MX_SPI1_Init();
 
   /* USER CODE BEGIN 2 */
-  initDisplay();
-  selectRow(0);
-  sendDataToDisplay(40);
+displayInit();
+
+    HAL_Delay(50);
+  char buffer[10];
+        sprintf(buffer, "Temp:C");
+        selectRow(1);
+        printf("Printing temp to display..\n");
+sendCharToDisplay(buffer);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -211,7 +291,10 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+  displayInit();
+
+    // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+    // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, GPIO_PIN_SET);
   }
   /* USER CODE END 3 */
 
@@ -225,38 +308,38 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
 
-    /**Initializes the CPU, AHB and APB busses clocks 
+    /**Initializes the CPU, AHB and APB busses clocks
     */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = 16;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL8;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
 
-    /**Initializes the CPU, AHB and APB busses clocks 
+    /**Initializes the CPU, AHB and APB busses clocks
     */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
 
-    /**Configure the Systick interrupt time 
+    /**Configure the Systick interrupt time
     */
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 
-    /**Configure the Systick 
+    /**Configure the Systick
     */
   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
 
@@ -280,7 +363,7 @@ void _Error_Handler(char * file, int line)
   while(1)
   {
   }
-  /* USER CODE END Error_Handler_Debug */ 
+  /* USER CODE END Error_Handler_Debug */
 }
 
 #ifdef USE_FULL_ASSERT
@@ -305,10 +388,10 @@ void assert_failed(uint8_t* file, uint32_t line)
 
 /**
   * @}
-  */ 
+  */
 
 /**
   * @}
-*/ 
+*/
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

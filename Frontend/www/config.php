@@ -1,9 +1,18 @@
-/* Code for logging in to the database */
+/* Code for logging in to the database 
+
+Info for SQL database is below
+servername: localhost
+username: root
+password: password
+databasename: smartdisplayusers
+
+
+*/
 <?php
 
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'password');
 define('DB_NAME', 'smartdisplayusers');
  
 
