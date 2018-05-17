@@ -1,3 +1,5 @@
+/* Code for logging in through sending user credentials and seeing if they match the ones in the database. */
+
 <?php
 require_once 'config.php';
  
