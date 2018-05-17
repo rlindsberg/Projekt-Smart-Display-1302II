@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "root", "", "smartdisplaymessage");
+$link = mysqli_connect("localhost", "root", "password", "smartdisplaymessage");
  
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
