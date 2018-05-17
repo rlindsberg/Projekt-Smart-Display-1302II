@@ -1,3 +1,4 @@
+/* Code that create the table for the messages on the database */
 <?php
 $link = mysqli_connect("localhost", "root", "password", "smartdisplaymessage");
  
