@@ -1,3 +1,4 @@
+/* Code that removes the current message from the database. */
 <?php
 
 
