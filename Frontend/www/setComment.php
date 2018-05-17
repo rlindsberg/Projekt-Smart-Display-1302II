@@ -1,3 +1,5 @@
+/* This code sends a message to the database and returns to the home page. */
+
 <?php
   
 if (isset($_POST['messageSubmit']))
