@@ -1,4 +1,11 @@
-/* Code for logging in to the database */
+/* Code for logging in to the database 
+Info for SQL database is below
+servername: localhost
+username: root
+password: password
+databasename: smartdisplaymessage
+
+*/
 <?php
 
 define('DB_SERVER', 'localhost');
