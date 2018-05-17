@@ -1,0 +1,3 @@
+language: c
+
+./configure && make && make test
