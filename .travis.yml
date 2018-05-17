@@ -1,6 +1,6 @@
 language: c
 sudo: false # only for faster builds
 script:
-  - clang -IInc -coverage -O0 Backend/Roderick/Smart-Display/Src/main.c -o main
+  - clang -IInc -coverage -O0 Backend/Roderick/Src/main.c -o main
   - ./main
-  - gcov Backend/Roderick/Smart-Display/Src/main.c
+  - gcov Backend/Roderick/Src/main.c
