@@ -1,6 +1,6 @@
 language: c
 sudo: false # only for faster builds
 script:
-  - gcc -g -Wall -IBackend/Roderick/Inc -IBackend/Roderick/Drivers/STM32F3xx_HAL_Driver/Inc -c Backend/Roderick/Src/main.c
-  - ./main
+  - gcc -g -Wall -IBackend/Roderick/Inc -IBackend/Roderick/Drivers/STM32F3xx_HAL_Driver/Inc -IBackend/Roderick/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -IBackend/Roderick/Drivers/CMSIS/Device/ST/STM32F3xx/Include -IBackend/Roderick/Drivers/CMSIS/Include -c Backend/Roderick/Src/main.c
+  - Backend/Roderick/Src/main
   - gcov Backend/Roderick/Src/main.c
