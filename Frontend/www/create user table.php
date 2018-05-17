@@ -1,4 +1,10 @@
-/* Code used to generate a database table */
+/* Code used to generate a database table 
+servername: localhost
+username: root
+password: password
+databasename: smartdisplayusers
+
+*/
 
 <?php
 $link = mysqli_connect("localhost", "root", "password", "smartdisplayusers");
