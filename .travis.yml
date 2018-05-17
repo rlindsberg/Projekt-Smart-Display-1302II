@@ -1,3 +1,6 @@
 language: c
-
-./configure && make && make test
+sudo: false # only for faster builds
+script:
+  - clang -coverage -O0 Backend/William/Src/main.c -o main
+  - ./main
+  - gcov Backend/William/Src/main.c
