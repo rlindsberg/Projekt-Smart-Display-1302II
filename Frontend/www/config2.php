@@ -1,3 +1,4 @@
+/* Code for logging in to the database */
 <?php
 
 define('DB_SERVER', 'localhost');

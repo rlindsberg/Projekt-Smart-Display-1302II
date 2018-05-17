@@ -96,33 +96,7 @@ p#right {
      color:  grey;
 }
 
-img#calendar {
-    display: block;
-    margin: 0 auto;
-    border-radius: 25%;
-}
-img#balls {
-     position: relative;
-     left: 295px;
-     bottom: 150px;
-     border-radius: 10%;
-}
-img#meat {
-    position: relative;
-    left: 10px;
-      border-radius: 10%;
-}
-img#cakes {
-     position: relative;
-     left: 220px;
-     bottom: 191px;
-     border-radius: 10%;
-}
-img#pan {
-     position: relative;
-    left: 10px;
-      border-radius: 10%;
-}
+
 ul {
     list-style-type: none;
     margin: 0;
