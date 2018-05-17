@@ -1,3 +1,5 @@
+/* Code used to generate a database table */
+
 <?php
 $link = mysqli_connect("localhost", "root", "", "smartdisplayusers");
  
