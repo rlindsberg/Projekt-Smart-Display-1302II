@@ -1,16 +1,16 @@
-"C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\Drivers\STM32F3xx_HAL_Driver\Src\stm32f3xx_hal_rcc_ex.c"
+"C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Drivers\STM32F3xx_HAL_Driver\Src\stm32f3xx_hal_rcc_ex.c"
 -std=c11
 -ferror-limit=0
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM/../Inc
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\EWARM/../Inc
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM/../Drivers/STM32F3xx_HAL_Driver/Inc
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\EWARM/../Drivers/STM32F3xx_HAL_Driver/Inc
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM/../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\EWARM/../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM/../Drivers/CMSIS/Device/ST/STM32F3xx/Include
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\EWARM/../Drivers/CMSIS/Device/ST/STM32F3xx/Include
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\EWARM/../Drivers/CMSIS/Include
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\EWARM/../Drivers/CMSIS/Include
 -I
 D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CMSIS\Include
 -I
@@ -18,15 +18,15 @@ D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\inc
 -I
 D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\inc\c
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\Inc
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Inc
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\Drivers\STM32F3xx_HAL_Driver\Inc
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Drivers\STM32F3xx_HAL_Driver\Inc
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\Drivers\CMSIS\Device\ST\STM32F3xx\Include
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Drivers\CMSIS\Device\ST\STM32F3xx\Include
 -I
-C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Smart-Display\Drivers\CMSIS\Include
+C:\Users\Ag\Documents\GitHub\Projekt-Smart-Display-1302II\Backend\Roderick\Drivers\CMSIS\Include
 -I
 D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CMSIS\Include
 -D__CHAR_BITS__=8
