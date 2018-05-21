@@ -21,16 +21,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `meatballscomments`
 --
-CREATE DATABASE IF NOT EXISTS `meatballscomments` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `meatballscomments`;
+CREATE DATABASE IF NOT EXISTS `comments` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `comments`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `meatballscomments`
+-- Table structure for table `comments`
 --
 
-CREATE TABLE `meatballscomments` (
+CREATE TABLE `comments` (
   `cid` int(11) NOT NULL,
   `uid` varchar(128) NOT NULL,
   `date` datetime NOT NULL,
@@ -38,22 +38,22 @@ CREATE TABLE `meatballscomments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `meatballscomments`
+-- Dumping data for table `comments`
 --
 
-INSERT INTO `meatballscomments` (`cid`, `uid`, `date`, `message`) VALUES
-(28, 'bassel', '2018-01-03 13:54:01', 'Thank you for the great recipe'),
-(29, 'bassel', '2018-01-03 14:03:31', 'It tastes very delicious'),
-(30, 'bassel', '2018-01-11 22:28:23', 'thanks');
+INSERT INTO `comments` (`cid`, `uid`, `date`, `message`) VALUES
+(28, 'bassel', '2018-01-03 13:54:01', 'hej'),
+(29, 'bassel', '2018-01-03 14:03:31', 'test'),
+(30, 'bassel', '2018-01-11 22:28:23', 'wowowowowo');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `meatballscomments`
+-- Indexes for table `comments`
 --
-ALTER TABLE `meatballscomments`
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`cid`);
 
 --
@@ -61,62 +61,10 @@ ALTER TABLE `meatballscomments`
 --
 
 --
--- AUTO_INCREMENT for table `meatballscomments`
+-- AUTO_INCREMENT for table `comments`
 --
-ALTER TABLE `meatballscomments`
+ALTER TABLE `comments`
   MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
---
--- Database: `pancakescomments`
---
-CREATE DATABASE IF NOT EXISTS `pancakescomments` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `pancakescomments`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pancakescomments`
---
-
-CREATE TABLE `pancakescomments` (
-  `cid` int(11) NOT NULL,
-  `uid` varchar(128) NOT NULL,
-  `date` datetime NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pancakescomments`
---
-
-INSERT INTO `pancakescomments` (`cid`, `uid`, `date`, `message`) VALUES
-(18, 'bassel', '2017-11-19 01:17:57', 'Waiting for more');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `pancakescomments`
---
-ALTER TABLE `pancakescomments`
-  ADD PRIMARY KEY (`cid`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `pancakescomments`
---
-ALTER TABLE `pancakescomments`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
---
--- Database: `users`
---
-CREATE DATABASE IF NOT EXISTS `users` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `users`;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
