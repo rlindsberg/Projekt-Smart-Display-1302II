@@ -39,7 +39,10 @@ else {
         <p id=special>Because saving trees matters!</p>
         <span> </span>
 <p> Active message</p>
+   
 <?php
+   
+   /*PHP code for displaying the message and the author*/
 $sql = "SELECT * FROM message";
     
 $result = $link->query($sql);
