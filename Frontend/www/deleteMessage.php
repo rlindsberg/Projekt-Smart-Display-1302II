@@ -7,6 +7,6 @@
       
    $sql = "TRUNCATE TABLE message";   
  $result = mysqli_query($link, $sql);
-   
+   /*Heading back to index page after excuting*/
  header("location: index.php");
       
