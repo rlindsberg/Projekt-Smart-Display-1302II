@@ -1,6 +1,8 @@
 # Projekt-Smart-Display-II1302
 A smart home solution that enables users to send messages to a door display via internet.
 
+[![Build Status](https://travis-ci.org/rlindsberg/Projekt-Smart-Display-1302II.svg?branch=master)](https://travis-ci.org/rlindsberg/Projekt-Smart-Display-1302II)
+
 ## Website
 ### At Mac/PC:
 Make a working directory, pull the repo from Github and happy coding!
