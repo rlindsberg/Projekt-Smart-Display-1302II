@@ -1,4 +1,4 @@
-# Vad är en bra projektmetod för små IT-projekt? v1.1
+## Vad är en bra projektmetod för små IT-projekt?
 
 Ett försök att besvara frågan görs i kursen II1302 &quot;Projekt och projektmetoder&quot; vid EECS-skolan
 
@@ -14,7 +14,7 @@ _Kungliga Tekniska Högskolan_
 
 williamlewin@kth.se
 
-[ruliu@kth.se](mailto:ruliu@kth.se)
+ruliu@kth.se
 
 
 
@@ -28,7 +28,14 @@ williamlewin@kth.se
 
 **Kursens huvudsakliga mål är att besvara på frågan &quot;Vad är en bra projektmetod för små IT-projekt?&quot;. Andra delmålen listas nedanför:**
 
-1. **Tillämpa en lämplig projektprocess.**
+1.
+1.
+**#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:01:00&#39;RK
+NOTE: &#39;Man kanske behöver inte påminna Anders om kursmålen&#39;] ****Tillämpa en lämplig projektprocess.**
 2. **Kunna upprätta, följa och utvärdera en projektplan, riskanalys och testspecifikationer för typiska IT-projekt.**
 3. **Kunna fånga, dokumentera och organisera krav i typiska IT-projekt.**
 4. **Kunna bygga en prototyp och felsöka en produkt som är typisk inom IT.**
@@ -49,9 +56,37 @@ williamlewin@kth.se
 
 **Keywords** — **Rollspel, projekt, rollansvar, kursmål, Scrum, Projekttavla, sprint, klassdiagram, arkitektursbeskrivning**
 
-1. **I.**** Om detta dokument och undersökning (Raman, Roderick)**
+1.
+**I.**
+**#
+[ANNOTATION:
 
-Denna rapport är resultatet av ett projektarbete på tio veckor som utförts på halvfart under vårterminen 2018 på KTH Campus Kista. I rapporten beskriver vi metoden vi använde för att besvara frågan &quot;Vad är en bra projektmetod för små IT-projekt?&quot;. I del I, …. del II ... del III, listar vi de litteraturerna som vi har läst och utgick ifrån, för att hitta ingång och möjligheter i undersökningen. Även vilka ansatser som var ett underlag inför undersökningen. Del IV innehåller en beskrivning av metoden vi använde oss av i undersökningen. Del V innehåller framställningen av rollerna vi tog på oss i syfte av att genomföra projektmetoderna.  Del VI innehåller resultatet vi fick från undersökningen, där vi analyserar vilka rollspecifika arbetssätt vi fick använda under ett och varje ansvarsområde samt vilka alternativa arbetssätt vi föreslår. Sedan värderar vi subjektivt deras bidrag till projektet.
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:25:00&#39;RK
+NOTE: &#39;Inledning. Läsaren måste kunna förstå bakgrunden (vad är små IT-projekt, vad är scrum..) och vad vi vill uppnå i projektet, vad vi har gjort i projektet, mer detaljer.&#39;]****Om detta dokument och undersökning (Raman, Roderick)**
+
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:20:00&#39;RK
+NOTE: &#39;Läs på scrum. Vad är fördelen med det? Hur definerar man små projekt? &#39;]
+
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:09:00&#39;RK
+NOTE: &#39;I denna rapport undersöker vi om scrum-ramverket är tillämpbart på små it-projekt&#39;]
+Denna rapport är resultatet av ett projektarbete på tio veckor som utförts på halvfart under vårterminen 2018 på KTH Campus Kista. I rapporten beskriver vi metoden vi använde för att besvara frågan &quot;Vad är en bra projektmetod för små IT-projekt
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:20:00&#39;RK
+NOTE: &#39;Inte bra&#39;
+NOTE: &#39;&#39;]
+?&quot;. I del I, …. del II ... del III, listar vi de litteraturerna som vi har läst och utgick ifrån, för att hitta ingång och möjligheter i undersökningen. Även vilka ansatser som var ett underlag inför undersökningen. Del IV innehåller en beskrivning av metoden vi använde oss av i undersökningen. Del V innehåller framställningen av rollerna vi tog på oss i syfte av att genomföra projektmetoderna.  Del VI innehåller resultatet vi fick från undersökningen, där vi analyserar vilka rollspecifika arbetssätt vi fick använda under ett och varje ansvarsområde samt vilka alternativa arbetssätt vi föreslår. Sedan värderar vi subjektivt deras bidrag till projektet.
 
 Efter fyra iterationer har projektgruppen tagit fram produkten &quot;smart display&quot; som är en digital display inbyggd i ett kretskort. Användaren kan lämna meddelande till displayen genom att ansluta sin mobil till produktens trådlösa nätverk, och sedan skriva meddelande i en applikation.
 
@@ -59,7 +94,21 @@ Efter fyra iterationer har projektgruppen tagit fram produkten &quot;smart displ
 
 1. **A.**** Bakgrund**
 
-Som ingenjör stöter man förr eller senare på ett IT-projekt. Därför under denna kurs förväntas projektdeltagarna läsa in teorier och tillämpa dem i detta projekt. Utgångspunkten för ett projekt är enligt Dr. Sven Eklund att en grupp människor har en gemensam uppgift att utföra, och baserat på denna uppgift kan man dela upp projekt i olika kategorier [REFERENS TILL EKLUND].
+Som ingenjör stöter man förr eller senare på ett IT-projekt. Därför under
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:09:00&#39;RK
+NOTE: &#39;Hur mycket bör ni skriva om kursen och dess mål?&#39;]
+denna kurs förväntas projektdeltagarna läsa in teorier och tillämpa dem i detta projekt. Utgångspunkten för ett projekt är
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:10:00&#39;RK
+NOTE: &#39;Referera!&#39;]
+enligt Sven Eklund att en grupp människor har en gemensam uppgift att utföra, och baserat på denna uppgift kan man dela upp projekt i olika kategorier [REFERENS TILL EKLUND].
 
 - _Forskningsprojekt_. En sökande typ av projekt med lösa tyglar och tidsramar, ofta är även målet lite diffust då man inte oftast vet vad slut resultatet blir.
 - _Utredningsprojekt_. Dessa är även sökande typ av projekt men samtidigt starkt problemorienterande. Då målet är oftast att finna ett resultat till ett visst datum.
@@ -67,12 +116,32 @@ Som ingenjör stöter man förr eller senare på ett IT-projekt. Därför under 
 - _Genomförandeprojekt._ Målet med dessa handlar om att införa något nytt i en verksamhet.
 -  _Konstruktionsprojekt._ Ett lyckad utvecklingsprojekt blir ofta ett konstruktionsprojekt. Dessa har en detaljerad planering, tydliga mål och en deadline.
 
-Målet med kursen är att delta i ett rollspel som är ett IT-projekt av typen konstruktionsprojekt. Varje gruppmedlem ska delta från början till slut, varje deltagare antar en specifik roll som den ska agera som under projektets genomgång. Kursens övergripande mål är att se hur det är att vara med i en projektgrupp och testa olika teorier kring projekt och projektmetoder. Önskan är att kunna besvara frågan &quot;Vad är en bra projektmetod för små IT-projekt&quot;?
+Målet med kursen är att delta i ett rollspel som är ett IT-projekt av typen konstruktionsprojekt. Varje gruppmedlem ska delta från början till slut, varje deltagare antar en specifik roll som den ska agera som under projektets genomgång.
+#
+[ANNOTATION:
 
-Som deltagare i projektgruppen kommer man vara med och förhoppningsvis leda projektet till framgång, men i vissa fall kommer man tyvärr att misslyckas med sitt mål, det kan bero på saker som överdragna tidsplaner och ouppfyllda funktionalitets-mål. Under senaste tiden har det utvecklats ett flertal projektmetoder som används varierande beroende på hur många som arbetar i projektet, hur mycket tid/pengar som ska investeras och hur produkten ska levereras. Så det finns idag olika metodiker för varje enskilt behov som behöver fyllas av gruppen. De populäraste såsom de agila metoderna [[REFERENS TILL POPULARITET]](https://teamweek.com/blog/2017/09/top-project-management-methodologies/) som är särskilt intressanta för vårt typ av projekt. . [[REFERENS TIll AGILA PROJEKTMETODER](https://media.wiley.com/product_data/excerpt/44/11189910/1118991044-8.pdf)]
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:10:00&#39;RK
+NOTE: &#39;Hur mycket bör ni skriva om kursen och dess mål?&#39;]
+Kursens övergripande mål är att se hur det är att vara med i en projektgrupp och testa olika teorier kring projekt och projektmetoder. Önskan är att kunna besvara frågan &quot;Vad är en bra projektmetod för små IT-projekt&quot;?
+
+Som deltagare i projektgruppen
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:11:00&#39;RK
+NOTE: &#39;Hur mycket bör ni skriva om kursen och dess mål?&#39;]
+kommer man vara med och förhoppningsvis leda projektet till framgång, men i vissa fall kommer man tyvärr att misslyckas med sitt mål, det kan bero på saker som överdragna tidsplaner och ouppfyllda funktionalitets-mål. Under senaste tiden har det utvecklats ett flertal projektmetoder som används varierande beroende på hur många som arbetar i projektet, hur mycket tid/pengar som ska investeras och hur produkten ska levereras. Så det finns idag olika metodiker för varje enskilt behov som behöver fyllas av gruppen. De populäraste såsom de agila metoderna [[REFERENS TILL POPULARITET]](https://teamweek.com/blog/2017/09/top-project-management-methodologies/) som är särskilt intressanta för vårt typ av projekt. . [[REFERENS TIll AGILA PROJEKTMETODER](https://media.wiley.com/product_data/excerpt/44/11189910/1118991044-8.pdf)]
 
 1. **B.**** Problemformulering**
 
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:11:00&#39;RK
+NOTE: &#39;Beskrivning av vad? Referens?&#39;]
 En generell beskrivning är att en bra projektmetod är en som tar hänsyn till kundens krav och visioner medan samtidigt låter varje person i utvecklingsteamet vara och jobba som den bästa versionen av sig själv. Det är här rätt typ av projektmetod kommer in i bilden. Med rätt typ menas sättet som projektet leds på och på de regler som gruppen ska följa, t.ex. angående dokumentation, kommunikation och mötesrutiner.
 
 Vår hypotes är att nuvarande undersökta och välutvecklade metoder med eventuella modifikationer kan leda till ett svar på vår fråga. Metoderna vi främst vill testa är då EssUp och Scrum då dessa är både omtalade och har en del kvalitativ bakgrund.
@@ -87,9 +156,22 @@ Projektmetodikers utveckling och forskning har genom åren blivit alltmer popul�
 
 Figur 1:Procentandel av projektlednings forskningsartiklar per årtionde Källa: utvecklad för denna rapport; datakälla [Kloppenborg &amp; Opfer](https://www.pmi.org/learning/library/pm-research-trends-interpretations-predictions-2016)
 
-Här kan man se att forskningen inom projektmetodiker ökar till mängden, med en kraftig ökning på 1990-talet. Faktum är över 60% av all forskning inträffade på 90-talet, vilket visar att det vetenskapliga området för projektledning växer i snabb takt.
+Här kan man se att forskningen inom projektmetodiker ökar till mängden, med en kraftig ökning på 1990-talet. Faktum är över
+#
+[ANNOTATION:
 
-[En studie är ett Examensjobb skriven av Annika Katter vid Yrkeshögskolan Novia i Helsingborg om &quot;Förslag till en ekonomiskt hållbar projektmetod, En fallstudie vid Sydweb&quot;](https://kth.instructure.com/courses/5226/files/766877/download?wrap=1) studien kom fram till att det inte går med säkerhet att bekräfta att projekten som hon hade observerad under fallstudiens tidsram gick med förlust pga. bristfällig projektmetod. Hon hävdar dock att det finns utan tvekan ett behov av att förbättra Projektmetoderna som användes vid tillfället, vilket ger oss förtroende att vår hypotes kan stämma då vi hävdar att modifikationer kan behövas för att bestämma vad som är en bra projektmetod för små IT-projekt.
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:15:00&#39;RK
+NOTE: &#39;Forskning genomförs, publiceras. Ej inträffas.&#39;]
+60% av all forskning inträffade på 90-talet, vilket visar att det vetenskapliga området för projektledning växer i snabb takt.
+
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:15:00&#39;RK
+NOTE: &#39;Hur citerar man?X&#39;]
+ [En studie är ett Examensjobb skriven av Annika Katter vid Yrkeshögskolan Novia i Helsingborg om &quot;Förslag till en ekonomiskt hållbar projektmetod, En fallstudie vid Sydweb&quot;](file:///h)studien kom fram till att det inte går med säkerhet att bekräfta att projekten som hon hade observerad under fallstudiens tidsram gick med förlust pga. bristfällig projektmetod. Hon hävdar dock att det finns utan tvekan ett behov av att förbättra Projektmetoderna som användes vid tillfället, vilket ger oss förtroende att vår hypotes kan stämma då vi hävdar att modifikationer kan behövas för att bestämma vad som är en bra projektmetod för små IT-projekt.
 
 1. **E.**** Avgränsningar**
 
@@ -105,16 +187,42 @@ Då våran grupp är mindre kommer det vara enklare att ge personlig feedback d�
 
 1. **F.**** Litteraturstudie**
 
-**I detta kapitel anges litteratur och andra källor som har använts för att hitta ingångar och möjligheter i undersökningen? Förutom de källor som anges finns förmodligen andra, och kanske bättre, källor som denna studie inte använts sig av.**
+**#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:16:00&#39;RK
+NOTE: &#39;Det finns ett stort antal studier som beskriver…&#39;] ****I detta kapitel anges litteratur och andra källor som har använts för att hitta ingångar och möjligheter i undersökningen? Förutom de källor som anges finns förmodligen andra, och kanske bättre, källor som denna studie inte använts sig av.**
 
 **Undersökningens görs utifrån övergripande projektmetoder men också utifrån specifika metoder och arbetssätt som används av olika kompetenser [ref Essence] i projektets team. Vilka dessa kompetenser är framgår av texten nedan.**
 
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:35:00&#39;RK
+NOTE: &#39;Litteraturstudie handlar inte om hur vi sökte information, utan visa att det finns studier och vi har läst på.&#39;]
 En litteraturstudie genomfördes i förberedelse för att börja planera och fundera över vilka metoder som skulle undersökas och testas genom projektets gång. En del litteratur lästes av samtliga deltagare och en del lästes individuellt för att sedan visas praktiskt för de andra deltagarna i gruppen.
 
 **Övergripande källor för hela projektet:**
 
 - [Scrum and XP from the trenches](http://wwwis.win.tue.nl/2R690/doc/ScrumAndXpFromTheTrenchesonline07-31.pdf)
-- Grunder inom projektarbete, Arbeta i projekt - individen, gruppen, ledaren
+-
+●●
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:34:00&#39;RK
+NOTE: &#39;Citera i inledningen. Varför projekt i arbetslivet. (Repetera vad som skrevs i abstrakten)&#39;]
+
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:32:00&#39;RK
+NOTE: &#39;Så här brukar man inte skriva. Listan ska vara i referensen.&#39;]
+Grunder inom projektarbete, Arbeta i projekt - individen, gruppen, ledaren
 - Essence 1.0
 - [Introduction to Agile Project Management](https://media.wiley.com/product_data/excerpt/44/11189910/1118991044-8.pdf)
 - [Survey of Agile Tools Usage and Needs](https://kth.instructure.com/courses/5226/files/766879/download?wrap=1)
@@ -147,16 +255,37 @@ En litteraturstudie genomfördes i förberedelse för att börja planera och fun
 
 1. **G.**** Förstudie**
 
-Enligt undersökningsstrategin så skall någon projektmetod prövas i ett praktiskt projekt och utifrån de erfarenheter som fås görs en värdering av använda metoder. Frågan är då vilken ansats av projektmetod som skall användas. Eftersom erfarenheten av projektarbete hos studenterna är liten så fanns det ett färdigt förslag till ansats av projektmetod. Detta projektmetodförslag kan senare modifieras av projektgruppen.
+Enligt undersökningsstrategin så skall någon projektmetod prövas i ett praktiskt projekt och utifrån de erfarenheter som fås görs en värdering av använda metoder. Frågan är då vilken
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:19:00&#39;RK
+NOTE: &#39;Ta bort.&#39;]
+ansats av projektmetod som skall användas. Eftersom erfarenheten av projektarbete
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:20:00&#39;RK
+NOTE: &#39;Ska detta vara med?&#39;]
+hos studenterna är liten så fanns det ett färdigt förslag till ansats av projektmetod. Detta projektmetodförslag kan senare modifieras av projektgruppen.
 
 Tidigare kursomgångar och lärarens förslag har mynnat ut i följande ansats. Projektmetoden framgår med god tydlighet av de arbetstavlor som definierats i ansatsen, se figurer och bilder.
 
 Resultatet av förstudien är att metoderna, som anges i följande kapitel, har valts för undersökningens genomförande.
 
-Eftersom att projektgruppen har en begränsad erfarenhet inom projektarbete i grupp presenterades ett förslag av kursens examinator som ett resultat av tidigare kursomgångar.
-Genom att praktiskt genomföra, diskutera och reflektera över de metoderna som undersökts i litteraturstudien kan senare en objektiv sammanställning göras av medlemmarna i gruppen.
+Eftersom projektgruppen har en begränsad erfarenhet inom projektarbete i grupp presenterades ett förslag av kursens examinator som ett resultat av tidigare kursomgångar.
+Genom att praktiskt genomföra, diskutera och reflektera över de metoder som undersökts i litteraturstudien kan senare en objektiv sammanställning göras.
 
-För att kunna bestämma vad som är en bra projektmetod utan bred erfarenhet inom gruppen får erfarenheten tas från de som har forskat och jobbat mycket med projektmetoder.
+För att kunna bestämma vad
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:21:00&#39;RK
+NOTE: &#39;Jag vet fortfarande inte vad det finns för metoder att välja bland.&#39;]
+som är en bra projektmetod utan bred erfarenhet inom gruppen får erfarenheten tas från de som har forskat och jobbat mycket med projektmetoder.
 
 Projektet genomförs i en mindre skala och med hjälp av praktisk övning och teoretiska studier från dokumenterad erfarenhet kan ökad förståelse inom ämnet ökas inom gruppen och leda till bra förhoppningar om att svara på frågeställningen.
 
@@ -170,21 +299,61 @@ Projektet genomförs i en mindre skala och med hjälp av praktisk övning och te
 
 1. **IV.**** Undersökningsmetoder(ROBIN/BASSEL)**
 
-**Detta kapitel beskriver vilka metoder som använts i undersökningen. Metoderna är valda och specificerade så att de skall kunna ge svar på ett antal följdfrågor som identifierats i denna undersökning. Först anges frågorna och sedan följer metodbeskrivning.**
+**Detta kapitel beskriver vilka metoder som använts i undersökningen. Metoderna är valda och specificerade så att de skall kunna ge svar på ett antal följdfrågor som identifierats i denna undersökning.**
 
 1. **H.**** Frågor att besvara i undersökningen (Robin)**
 
 Frågorna kategoriseras i följande kategorier:
 
-1. **1.** Hur skall man bedöma/redovisa om en delprojektmetod eller praktik är bra?
+1.
+**1.**
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:22:00&#39;RK
+NOTE: &#39;Dubbla listor&#39;
+NOTE: &#39;&#39;]
+Hur skall man bedöma/redovisa om en delprojektmetod eller praktik är bra?
 2. **2.** Hur kan man kategorisera, välja, och namnge projektmetoder (projektpraktiker) och (verklighetsbeskrivning) så att diskussionen om dito blir begreppsmässigt konsisten för ingenjörer inom IT-området (s k ontologi?).
 3. **3.** Vilka ansvarsroller skall användas som ansats i projektet?
 4. **4.** Vad består ett projekt av och vilka metoder/praxis skall användas, undersökas och bedömas? Vilken ansats skall göras?
 
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:23:00&#39;RK
+NOTE: &#39;Frågeställningen ska vara in i inledningen – viktigt för läsaren att veta i ett tidigt skede.&#39;]
 Här är de frågeställningar som vi har valt att besvara i undersökningen:
 
-- --Vilka delar består ett litet IT-projekt utav och vilka metoder bör användas och bedömas?
-- --Hur ska man bedöma att en metod eller praktik funkar bra?
+-
+--
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:26:00&#39;RK
+NOTE: &#39;Stämmer inte överens med projektets syfte&#39;]
+Vilka delar består ett litet IT-projekt utav och vilka metoder bör användas och bedömas?
+-
+--
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:30:00&#39;RK
+NOTE: &#39;Tydligt säga att vi anväder scrum&#39;
+NOTE: &#39;Skriv mer om gruppsammansättning&#39;
+NOTE: &#39;&#39;]
+
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T13:27:00&#39;RK
+NOTE: &#39;Känns som att det finns en uppsjö av metoder.&#39;]
+Hur ska man bedöma att en metod eller praktik funkar bra?
 - --Vilka ansvarsroller ska användas i projektet och vilka metoder ska användas för att dessa ska fungera effektivt och fylla sin funktion?
 
 1. **I.**** Metodbeskrivning (Bassel)**
@@ -205,21 +374,32 @@ Metoden vi använde i vårt projekt var Scrum. Vi har fördelat ansvar i fem oli
 
 **Figur 1 Begrepp (Elvesæter, Benguria, &amp; Ilieva, 2013)**
 
-1. **V.**** Genomförande**
+1.
+**V.**
+**#
+[ANNOTATION:
 
-**I följande kapitel redovisas viktiga beslut, förändringar och anpassningar som gjorts i projektmetod, projektpraktiker, värderingar, beslut mm som gjorts under studiens genomförande.**
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:27:00&#39;RK
+NOTE: &#39;Mer referenser. Mycket mer.&#39;] ****Genomförande**
+
+**I följande kapitel redovisas viktiga beslut, förändringar och anpassningar**
+**#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:26:00&#39;RK
+NOTE: &#39;Satserna hänger inte ihop.&#39;] ****som gjorts i projektmetod, projektpraktiker, värderingar, beslut mm som gjorts**  **under studiens genomförande.**
 
 1. **J.**** Kund-och-kravansvarig (William)**
 
-Efter att visionen från vår beställare var färdig skapades en kravspecifikation inom gruppen för att säkerställa vilka tekniska mål som produkten var tvungen att uppfylla för att nå upp till beställarens vision.
+Efter att visionen från vår beställare var färdig, skapades en kravspecifikation inom gruppen för att säkerställa vilka tekniska mål som produkten var tvungen att uppfylla för att nå upp till beställarens vision.
 Utifrån kravspecifikationen kunde sedan en riskanalys sammanställas där risker och dess påverkan beskrivs så att arbetet kunde genomföras med detta i åtanke. När vi planerade arbetet som skulle utföras bestämde vi oss för att hålla oss till det iterativa arbetssättet som används i övriga projektet för att driva arbetet mot en färdig produkt så fort som möjligt. Vi diskuterade även vad som krävdes av hårdvaran för att hantera både de krav vi sammanställde och kundens vision.
 Det iterativa arbetssättet ledde även till att testning av de olika komponenterna skedde kontinuerligt och lät oss identifiera fel fort och lösa de så fort som möjligt.
 Den iterativa lösningen öppnade upp för att introducera hårdvaru-konstruktionen i SCRUM-arbetet. Eftersom att utvecklingen i stories fortsatte krävdes det att hårdvaru-utvecklingen genomfördes i etapper för att inte skapa en flaskhals. När en story var delvis klar kunde det avgöras att det var dags för att utveckla hårdvaran tillhörande just den storyn.
-I varje steg av hårdvaruutveckling skrevs även ett test som var produkten var tvungen att klara för att sedan börja jobba på produkten tills testet kunde köras med gott samvete. Om produkten inte klarade testet så fortsattes utvecklingen tills den klarade testet. Denna metod kallas TDD, test driven development och är direkt tagen från [Knibergs häfte.](http://wwwis.win.tue.nl/2R690/doc/ScrumAndXpFromTheTrenchesonline07-31.pdf)
+I varje steg av hårdvaruutveckling skrevs även ett test som var produkten var tvungen att klara för att sedan börja jobba på produkten tills testet kunde köras med gott samvete. Om produkten inte klarade testet så fortsattes utvecklingen tills den klarade testet. Denna metod kallas TDD, test driven development och är direkt tagen från [Knibergs häfte.](http://wwwis.win.tue.nl/2R690/doc/ScrumAndXpFromTheTrenchesonline07-31.pdf) I varje SCRUM-möte togs även status för hårdvaruutveckling upp som en mötespunkt för att se till att eventuella problem kunde tas tag i som en enad grupp.
 
-I varje SCRUM-möte togs även status för hårdvaruutveckling upp som en mötespunkt för att se till att eventuella problem kunde tas tag i som en enad grupp.
-
-1. **K.**** Projektledning**
+1. **K.**** Projektledning (Roderick)**
 
 Detta projekt sträcker sig i tio veckor och var uppdelat i fem iterationer. Under dem första fyra iterationerna ska projektgruppen ta fram en prototyp för kretskort och sedan utveckla mjukvaran för produkten. I den sista iterationen ska en slutrapport färdigställas och skickas in.
 
@@ -233,7 +413,14 @@ Detta har visat sig vara svårt i vårt projekt eftersom den person som har vari
 
 1. **L.**** Utvecklingsansvar (Robin)**
 
-I min roll som konstruktions- och utvecklingsansvarig var det viktigt att försöka få en helhetsbild över vad för produkt som skulle utvecklas, så jag var tvungen att hela tiden samarbeta med kund-och-kravansvarig samt arkitekt för att planera struktur för hemsidan så att den uppfyller de krav som ställs. I våra scrummöten såg jag till att se till att vi var överens om hur vi vill att utveckling av produkten bör ske. När vi hade en klar bild av upplägg på hemsidan, så delade vi in jobbet i 3 delar. En fick ta huvudansvar för att registrering, inloggning och utloggning, en annan fick ansvar över meddelandehantering. Den tredje fick huvudansvar över webbserver och Raspberrypien. De övriga två medlemmarna fick gemensamt ansvar över display och tillhörande c-kod. Inför både skrivande av php och c skapades en utvecklingsplan som vi hade som utgångspunkt kring några generella regler som skulle följas. Utvecklingsplanen användes också för att sätta lite regler kring github. Så när vi satt samlade som grupp satte vi upp reglerna kring hur vi ska använda github. Men sen under själva kodandet så kunde man bara följa planen och sköta sin del individuellt. Under iteration tre började vi att inse att det fanns problem kring kommunikationen med displayen och raspberrypien och att vi kanske inte skulle få tid nog att lösa detta. Då fick vi komma på plan b, c osv. Därmed uppdaterade vi uml-diagrammet till hemsidans klasser och la till en display-klass som fick agera som potentiell ersättning.
+I
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:28:00&#39;RK
+NOTE: &#39;Viktigt när man skriver många tillsammans: se till att ni skriver med samma röst. Jag… vs gjordes.&#39;]
+min roll som konstruktions- och utvecklingsansvarig var det viktigt att försöka få en helhetsbild över vad för produkt som skulle utvecklas, så jag var tvungen att hela tiden samarbeta med kund-och-kravansvarig samt arkitekt för att planera struktur för hemsidan så att den uppfyller de krav som ställs. I våra scrummöten såg jag till att se till att vi var överens om hur vi vill att utveckling av produkten bör ske. När vi hade en klar bild av upplägg på hemsidan, så delade vi in jobbet i 3 delar. En fick ta huvudansvar för att registrering, inloggning och utloggning, en annan fick ansvar över meddelandehantering. Den tredje fick huvudansvar över webbserver och Raspberrypien. De övriga två medlemmarna fick gemensamt ansvar över display och tillhörande c-kod. Inför både skrivande av php och c skapades en utvecklingsplan som vi hade som utgångspunkt kring några generella regler som skulle följas. Utvecklingsplanen användes också för att sätta lite regler kring github. Så när vi satt samlade som grupp satte vi upp reglerna kring hur vi ska använda github. Men sen under själva kodandet så kunde man bara följa planen och sköta sin del individuellt. Under iteration tre började vi att inse att det fanns problem kring kommunikationen med displayen och raspberrypien och att vi kanske inte skulle få tid nog att lösa detta. Då fick vi komma på plan b, c osv. Därmed uppdaterade vi uml-diagrammet till hemsidans klasser och la till en display-klass som fick agera som potentiell ersättning.
 
 1. **M.**** Arkitet (Raman)**
 
@@ -243,11 +430,7 @@ I min roll som konstruktions- och utvecklingsansvarig var det viktigt att förs�
 
 Som testansvarig hade jag som uppgift att under hela projektet och i varje sprint, att förbereda tester för olika delar och komponenter som är grunden som avgör  att produkten fungerar som den ska, och att dess funktionalitet följer kravspecifikationen. Jag hade förberett en testplan och teststrategi som var underlag till testprocessen genom hela projektet. I senare stadier genom projektet fick jag ändra och  utveckla testplanen på grund av brist på testkunskap i början av projektet, och även avvikelser som vi stötte på under utvecklingen, så att testen ska passa för förändringen i utvecklingsplanen,  arkitekturen, eller i kravspecifikationerna. I varje scrummöte tog vi upp vilka delar som skulle utvecklas och vilka som skulle testas enligt testspecifikation som jag hade redan förberett. I testspecifikationen ingick en tydlig strategi för hur den delen skulle testas, med testinput och förväntat output, och baserad på resultatet från testet så godkände jag testet och fortsatte vi vidare med produktutvecklingen. I fall testet var underkänt, vi felsökte problemet och prioriterade att få den delen att gå igenom testet så att vi kunde gå vidare och följa planen. Testspecifikationerna följde kravspecifikationerna.
 
-1. **VI.**** Resultat (Börja gärna) OBS INTE FUCKING YTLIGT**
-
-**Tabellen nedan listar bedömda &quot;områden&quot; och subjektiv värdering gentemot deras bidrag till Åstadkommer /skapar projektet rätt saker (validitet) och konstrueras lösningar på bästa sätt (reliabilitet)? Alternativa arbetssätt och del-projektmetoder anges också.**
-
-**&quot;Resultaten måste kunna användas för att svara på frågeställningen, kommer från metoden, keep-try-problems, hur svarar vi på frågan? LÄGG IN BILD&quot;**
+1. **VI.**** Resultat**
 
 1. **O.**** Projektgruppen**
 
@@ -280,8 +463,6 @@ Bedömningar ….**
 | **Modellering** | **Klassdiagram** | **Klassdiagrammet som skapades var inte särskilt avancerat och designat på ett sätt som ska effektiviseras programmerandet av webbsidan. Däremot skulle det kunna gjorts utförligare och med bättre struktur om man tänker sig att det projektet ska byggas på av ingenjörer som inte är insatta i projektet.** | **MVC - diagram**** Med högre cohesion och mindre coupling.** |
 | **Planering** | **Design och Utvecklingsplan** | **Det bästa som utvecklingsplanen gav, var att det fick oss att sätta oss ner och diskutera hur utvecklingen skulle gå till och vi fick struktur på det hela.** |   |
 | **Versionshantering** | **Github** | **Underlättade koduppdelning för de individuella delarna i stora systemet, samt höll projektet objektorienterat** | **OpenCVS** |
-
-
 
 1. **Q.**** Kund-och-kravansvarig (William)**
 
@@ -342,7 +523,14 @@ Bedömningar ….**
 |   |   |   |   |
 |   |   |   |   |
 
-1. **VII.**** Diskussion**
+1.
+**VII.**
+**#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:30:00&#39;RK
+NOTE: &#39;Saknas innehåll.&#39;] ****Diskussion**
 
 **Allmän diskussion. Vad säger resultatet om &quot;Vad är en bra projektmetod för små IT-projekt&quot;?**
 
@@ -393,6 +581,13 @@ Framtida förbättringar….
 I slutändan blev inte produkten det vi hade tänkt oss, men vi lyckades ändå komma med en alternativ lösning, och det viktigaste är erfarenheter av projektarbetet som vi tar med oss.
 
 &quot;Referens till github med resultaten&quot;
+
+#
+[ANNOTATION:
+
+BY &#39;Roderick Karlemstrand&#39;
+ON &#39;2018-05-23T21:30:00&#39;RK
+NOTE: &#39;Mer referenser.&#39;]
 
 Referenser
 
